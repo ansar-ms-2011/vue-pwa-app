@@ -99,7 +99,8 @@ html,
 body,
 #app {
   height: 100%;
-  margin: 0;
+  /* margin: 0; */
+  width: 100%;
 }
 
 body {
@@ -107,6 +108,6 @@ body {
     system-ui,
     -apple-system,
     BlinkMacSystemFont;
-  background: #f9fafb;
+  /* background: #f9fafb; */
 }
 </style>

@@ -10,13 +10,15 @@ const pendingSync = ref(0)
 async function loadStats() {
   const today = new Date()
   today.setHours(0, 0, 0, 0)
+  const startOfDay = today.getTime()
 
-  const orders = await db.orders.where('createdAt').aboveOrEqual(today).toArray()
+  const orders = await db.orders.where('createdAt').aboveOrEqual(startOfDay).toArray()
 
-  todaySales.value = orders.reduce((sum, o) => sum + o.total, 0)
+  todaySales.value = orders.reduce((sum, o) => sum + (o.total || 0), 0)
+
   ordersCount.value = orders.length
   productCount.value = await db.products.count()
-  pendingSync.value = await db.orders.where('synced').equals(false).count()
+  pendingSync.value = await db.orders.where('synced').equals(0).count()
 }
 
 onMounted(loadStats)
@@ -72,6 +74,7 @@ onMounted(loadStats)
   background: #f5f5f5;
   border-radius: 8px;
   text-align: center;
+  color: #4b5563;
 }
 
 .warning {

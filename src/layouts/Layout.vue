@@ -35,4 +35,7 @@ nav a {
 .content {
   padding: 1rem;
 }
+.layout {
+  width: 100% !important;
+}
 </style>

@@ -10,10 +10,14 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h2>Offline Orders</h2>
-
-  <div v-for="o in orders" :key="o.id">
-    Order #{{ o.id }} – Rs {{ o.total }}
-    <small>{{ new Date(o.createdAt).toLocaleString() }}</small>
-  </div>
+  <h2>Orders</h2>
+  <table class="">
+    <tr v-for="o in orders" :key="o.id">
+      <td>Order #{{ o.id }}</td>
+      <td>Rs {{ o.total }}</td>
+      <td>
+        <small>{{ new Date(o.createdAt).toLocaleString() }}</small>
+      </td>
+    </tr>
+  </table>
 </template>

@@ -5,7 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-
+import { seedOnce } from '@/db/seed'
 import { registerSW } from 'virtual:pwa-register'
 
 const updateSW = registerSW({
@@ -20,9 +20,10 @@ const updateSW = registerSW({
   },
 })
 
-const app = createApp(App)
+async function bootstrap() {
+  await seedOnce()
 
-app.use(createPinia())
-app.use(router)
+  createApp(App).use(router).use(createPinia()).use(router).mount('#app')
+}
 
-app.mount('#app')
+bootstrap()

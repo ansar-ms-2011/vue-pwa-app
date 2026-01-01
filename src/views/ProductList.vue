@@ -26,9 +26,22 @@ onMounted(loadProducts)
 
 <template>
   <h2>Products</h2>
-
-  <div v-for="p in products" :key="p.id">
-    {{ p.name }} - Rs {{ p.price }}
-    <button @click="addToCart(p)">Add</button>
+  <div>
+    <table class="products-table">
+      <tr v-for="p in products" :key="p.id">
+        <td>{{ p.name }}</td>
+        <td>Rs {{ p.price }}</td>
+        <td></td>
+        <td>
+          <button @click="addToCart(p)">Add</button>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
+
+<style>
+.products-table {
+  width: 100%;
+}
+</style>
