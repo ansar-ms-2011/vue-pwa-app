@@ -23,7 +23,7 @@ const updateSW = registerSW({
 async function bootstrap() {
   await seedOnce()
 
-  createApp(App).use(router).use(createPinia()).use(router).mount('#app')
+  createApp(App).use(router).use(createPinia()).mount('#app')
 }
 
 bootstrap()
