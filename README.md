@@ -1,6 +1,6 @@
 # vue-pwa-app
 
-This prooject is being developed with Vue 3 to learn the basic of a PWA (Progressive Web App). This is a offline firrst aplication which uses the indexedDB (Browser based storage) with dexie.js for storing local POS data.
+This prooject is being developed with Vue 3 to learn the basic of a PWA (Progressive Web App). This is an offline first aplication which uses the indexedDB (Browser based storage) with dexie.js for storing local POS data.
 
 ## Recommended IDE Setup
 
