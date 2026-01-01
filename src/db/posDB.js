@@ -1,0 +1,10 @@
+import Dexie from 'dexie'
+
+export const db = new Dexie('posDB')
+
+db.version(1).stores({
+  products: '++id, name, price, stock',
+  cart: '++id, productId, qty',
+  orders: '++id, total, createdAt, synced',
+  order_items: '++id, orderId, productId, qty, price',
+})
