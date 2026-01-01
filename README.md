@@ -1,6 +1,6 @@
 # vue-pwa-app
 
-This template should help get you started developing with Vue 3 in Vite.
+This prooject is being developed with Vue 3 to learn the basic of a PWA (Progressive Web App). This is a offline firrst aplication which uses the indexedDB (Browser based storage) with dexie.js for storing local POS data.
 
 ## Recommended IDE Setup
 
@@ -35,4 +35,11 @@ npm run dev
 
 ```sh
 npm run build
+```
+
+### Compile as PWA
+
+```sh
+npm run build
+npm run preview
 ```
